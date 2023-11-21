@@ -2,10 +2,15 @@ package com.example.model;
 
 public class User {
 
+    private String Id;
     private String username;
     private String password;
 
     // Getters and setters
+
+    public String getId() {return Id;}
+
+    public void setId(String Id){this.Id = Id;}
 
     public String getUsername() {
         return username;

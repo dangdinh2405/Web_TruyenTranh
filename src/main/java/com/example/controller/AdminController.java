@@ -1,11 +1,15 @@
 package com.example.controller;
 
 import com.example.model.Story;
+import com.example.model.User;
 import com.example.service.StoryService;
+import com.example.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +19,65 @@ public class AdminController {
 
     @Autowired
     private StoryService storyService;
+
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    public String showAddUserForm() {
+        return "admin/addUser";
+    }
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public String saveNewUser(@RequestParam String username, @RequestParam String password, Model model) {
+        if (userService.isUserExists(username)) {
+            model.addAttribute("error", "Username already exists");
+        }else
+        {
+            userService.saveUser(username, password);
+        }
+        return "redirect:/admin/page";
+    }
+
+    @RequestMapping("page")
+    public String page(HttpSession session, Model model){
+
+        String username = (String) session.getAttribute("username");
+        if (!"admin".equals(username)) {
+            model.addAttribute("error", "Access denied. You must be an admin to view this page.");
+            return "admin/page";
+        }
+
+        List<User> userList = userService.getAllUser();
+        model.addAttribute("userList", userList);
+        return "admin/page";
+    }
+
+    @RequestMapping(value = "/editUser/{userId}" , method = RequestMethod.GET)
+    public String editUser(@PathVariable String userId, Model model) {
+        User user = userService.getUserByID(userId);
+        model.addAttribute("user", user);
+        return "admin/editUser";
+    }
+
+    @RequestMapping(value = "/editUser", method = RequestMethod.POST)
+    public String editUser(@ModelAttribute("user") User user) {
+        userService.updateUserPassword(user.getUsername(), user.getPassword());
+        return "redirect:/admin/page";
+    }
+
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+    public String saveUser(@RequestParam String username, @RequestParam String password) {
+        userService.updateUserPassword(username,password);
+        return "redirect:/admin/page";
+    }
+
+    @RequestMapping(value = "/deleteUser/{userId}",method = RequestMethod.GET)
+    public String deleteUser(@PathVariable String userId) {
+        // Delete user based on userId
+        userService.deleteUserID(userId);
+        return "redirect:/admin/page";
+    }
 
     @RequestMapping("view_review")
     public String view_review() {

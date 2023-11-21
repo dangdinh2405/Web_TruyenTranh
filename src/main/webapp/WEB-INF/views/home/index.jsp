@@ -124,10 +124,20 @@
                 </li>
                 <li>
                     <a href="http://localhost:8080/Final1_war_exploded/home/register" rel="nofollow">
-                        <i class="fa-tags "></i>
+                        <i class="fa-tags"></i>
                         Đăng Kí
                     </a>
                 </li>
+            </ul>
+        </div>
+        <%
+        } else {
+            if ("admin".equals(username)) {
+        %>
+        <div id="userPanel">
+            <ul class="main-nav">
+                <p>Xin chào, <%= username %>! <a href="${pageContext.request.contextPath}/home/logout">Đăng xuất</a></p>
+                <button onclick="window.location.href='${pageContext.request.contextPath}/admin/page'">Admin Page</button>
             </ul>
         </div>
         <%
@@ -138,8 +148,9 @@
                 <p>Xin chào, <%= username %>! <a href="${pageContext.request.contextPath}/home/logout">Đăng xuất</a> </p>
                 <p> <a href="${pageContext.request.contextPath}/home/edit">Sửa thông tin</a> </p>
             </ul>
-        </div
+        </div>
         <%
+                }
             }
         %>
     </div>

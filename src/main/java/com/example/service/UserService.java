@@ -3,6 +3,8 @@ package com.example.service;
 
 import com.example.model.User;
 
+import java.util.List;
+
 public interface UserService {
     boolean isUserExists(String username);
 
@@ -13,4 +15,9 @@ public interface UserService {
     void updateUserPassword(String username, String password);
 
     void deleteUser(String usernameToDelete);
+
+    void deleteUserID(String userId);
+
+    List<User> getAllUser();
+    User getUserByID(String userId);
 }

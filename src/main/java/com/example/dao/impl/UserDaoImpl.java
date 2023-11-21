@@ -50,4 +50,36 @@ public class UserDaoImpl implements UserDao {
         jdbcTemplate.update(sql,usernameToDelete);
     }
 
+    @Override
+    public void deleteUserID(String userId){
+        String sql = "DELETE FROM account WHERE ID = ?";
+        jdbcTemplate.update(sql,userId);
+    }
+
+    @Override
+    public List<User> getAllUser(){
+        String sql = "SELECT * FROM account";
+        List<User> listuser = jdbcTemplate.query(sql, new Object[]{}, (resultSet, i) -> {
+            User user = new User();
+            user.setId(resultSet.getString("ID"));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+            return user;
+        });
+        return listuser;
+    }
+
+    @Override
+    public User getUserByID(String id){
+        String sql = "SELECT * FROM account WHERE ID = ?";
+        List<User> users = jdbcTemplate.query(sql, new Object[]{id}, (resultSet, i) -> {
+            User user = new User();
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+            return user;
+        });
+
+        return users.isEmpty() ? null : users.get(0);
+    }
+
 }
