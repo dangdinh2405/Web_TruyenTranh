@@ -1,0 +1,60 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'webtruyen_icon';
+    src: url('https://img.dtruyen.com/webtruyen_icon.eot');
+    src: url('https://img.dtruyen.com/webtruyen_icon.eot#iefix') format('embedded-opentype'), url('https://img.dtruyen.com/webtruyen_icon.woff2') format('woff2'), url('https://img.dtruyen.com/webtruyen_icon.woff') format('woff'), url('https://img.dtruyen.com/webtruyen_icon.ttf') format('truetype'), url('https://img.dtruyen.com/webtruyen_icon.svg?#webtruyen_icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    background: #eee;
+}
+
+.list-stories {
+    margin: 20px;
+}
+
+.list-stories h3 {
+    font-size: 1.5em;
+    color: #2F52B2;
+}
+
+.story-list {
+    list-style: none;
+    margin-bottom: 15px;
+    border: 1px solid #e5e6e9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.story-list a {
+    text-decoration: none;
+}
+
+.story-list img {
+    max-width: 100%;
+    height: auto;
+}
+
+.story-list .info {
+    padding: 10px;
+}
+
+.story-list .title {
+    font-size: 1.2em;
+    color: #2F52B2;
+    margin-bottom: 5px;
+}
+
+.story-list .story-author {
+    color: #555;
+}
+
+/* Add other styles as needed */
+
+/* Add your existing styles below this line */
