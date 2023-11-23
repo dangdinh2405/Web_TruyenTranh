@@ -12,7 +12,7 @@
         </h1>
         <ul class="main-nav">
             <li>
-                <a href="#" rel="nofollow">
+                <a rel="nofollow">
                     <i class="fa-tags"></i>
                     Thể loại
                 </a>

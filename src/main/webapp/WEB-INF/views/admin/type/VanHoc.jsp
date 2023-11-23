@@ -10,7 +10,6 @@
 <html>
 <base href="${pageContext.servletContext.contextPath}/">
 <link href="css/type.css" rel="stylesheet" />
-<body itemscope itemtype="http://schema.org/WebPage">
 <div class="list-stories">
     <h3>Danh sách truyện:</h3>
     <ul>

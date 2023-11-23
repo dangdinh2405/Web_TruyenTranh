@@ -2,6 +2,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
+<base href="${pageContext.servletContext.contextPath}/">
+<link href="css/edituser.css" rel="stylesheet" />
+<body itemscope itemtype="http://schema.org/WebPage">
 <head>
     <title>Edit User</title>
 </head>
@@ -17,5 +20,6 @@
 
     <input type="submit" value="Save">
 </form:form>
+</body>
 </body>
 </html>

@@ -1,6 +1,9 @@
 <%@ page import="com.example.model.User" %>
 <!DOCTYPE html>
 <html>
+<base href="${pageContext.servletContext.contextPath}/">
+<link href="css/edituser.css" rel="stylesheet" />
+<body itemscope itemtype="http://schema.org/WebPage">
 <head>
     <title>Add User</title>
 </head>
@@ -15,5 +18,6 @@
 
     <input type="submit" value="Save">
 </form>
+</body>
 </body>
 </html>

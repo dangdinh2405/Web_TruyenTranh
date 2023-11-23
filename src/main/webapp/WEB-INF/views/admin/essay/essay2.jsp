@@ -13,8 +13,8 @@
                             <i class="fa-angle-right"></i>
                         </span>
   <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                            <a href="https://top10camau.vn/wp-content/uploads/2022/10/anh-cap-doi-yeu-nhau-che-mat-1.jpg" itemprop="item">
-                                <span itemprop="name">Tôi là BêTô</span>
+                            <a href="admin/view_essay2" itemprop="item">
+                                <span itemprop="name">Em Xứng Đáng Hạnh Phúc</span>
                                 <meta itemprop="position" content="2">
                             </a>
                         </span>

@@ -134,6 +134,11 @@ public class AdminController {
         return "admin/view_read";
     }
 
+    @RequestMapping("view_all_newest")
+    public String all_newest() {
+        return "admin/view_all_newest";
+    }
+
     @RequestMapping("view_all_completed")
     public String view_all_completed() {
         return "admin/view_all_completed";

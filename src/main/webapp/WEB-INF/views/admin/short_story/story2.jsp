@@ -13,7 +13,7 @@
                             <i class="fa-angle-right"></i>
                         </span>
   <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                            <a href="admin/view_story1" itemprop="item">
+                            <a href="admin/view_story2" itemprop="item">
                                 <span itemprop="name">Hạnh Phúc Tắc Đường</span>
                                 <meta itemprop="position" content="2">
                             </a>
